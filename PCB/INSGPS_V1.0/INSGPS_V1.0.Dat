@@ -1,0 +1,31 @@
+Field=Comment~String~Comment~125|Field=Description~String~Description~171|Field=Designator~String~Designator~114|Field=Footprint~String~Footprint~114|Field=Quantity~Integer~Quantity~112|ReportField=Currency~<none>|ReportField=ProductionQuantity~1|ReportField=ProjectFileName~INSGPS_V1.0.PrjPcb|ReportField=ProjectFullPath~D:\GitHub\GPSINS\PCB\INSGPS_V1.0\INSGPS_V1.0.PrjPcb|ReportField=Title~Bill of Materials For Project [INSGPS_V1.0.PrjPcb] (No PCB Document Selected)|ReportField=TotalQuantity~47|ReportField=ReportTime~18:17:15|ReportField=ReportDate~12/05/2015|ReportField=ReportDateTime~12/05/2015 18:17:15|ReportField=OutputName~Bill of Materials|ReportField=OutputType~BOM_PartType|ReportField=GeneratorName~BOM|ReportField=GeneratorDescription~Bill of Materials|ReportField=VariantName~None|ReportField=Address1~|ReportField=Address2~|ReportField=Address3~|ReportField=Address4~|ReportField=Application_BuildNumber~|ReportField=ApprovedBy~|ReportField=Author~|ReportField=CheckedBy~|ReportField=CompanyName~|ReportField=CurrentDate~|ReportField=CurrentTime~|ReportField=Date~|ReportField=DocumentFullPathAndName~|ReportField=DocumentName~|ReportField=DocumentNumber~|ReportField=DrawnBy~|ReportField=Engineer~|ReportField=ImagePath~|ReportField=ModifiedDate~|ReportField=Organization~|ReportField=ProjectName~|ReportField=Revision~|ReportField=Rule~|ReportField=SheetNumber~|ReportField=SheetTotal~|ReportField=Time~|ReportField=Title~|ReportField=DataSourceFileName~INSGPS_V1.0.PrjPcb|ReportField=DataSourceFullPath~D:\GitHub\GPSINS\PCB\INSGPS_V1.0\INSGPS_V1.0.PrjPcb
+15pF|Capacitor|C1, C2|C0805|2
+100nF|Capacitor|C3, C5, C6, C7, C8|C0805|5
+10uF|Capacitor|C4|C0805|1
+10µ|Capacitor SMD Cer 10uF 10% 10V X5R 1206|C9, C11, C23, C24|CAPC3216X180N|4
+4µ7|Capacitor SMD Cer 4.7uF 10% 16V X5R 0805|C10|CAPC2012X135N|1
+100n|Capacitor SMD Cer 100nF 10% 100V X7R 0805|C12, C13, C15, C17, C18, C19|CAPC2012X135N|6
+10n|Capacitor SMD Cer 100nF 10% 100V X7R 0805|C14, C16|CAPC2012X135N|2
+1uF|Capacitor Tantalium 1206|C20|CC3216-1206|1
+Red|Typical BLUE SiC LED|D1|0805 LED RED|1
+Blue|Typical BLUE SiC LED|D2|0805 LED RED|1
+Header 4X2|Header, 4-Pin, Dual row|H1|HDR2X4|1
+Header 6|Header, 6-Pin|ICSP|HDR1X6|1
+USB_MINIB_SMT|MiniUSB-B,5P/F,7.6¡Á9¡Á4,SMD,RoHS|J1|USB_MINIB_SMT|1
+ST 2 pins 1mm pitch|Terminal Block THT 2-position header 3.81mm pitch|J2|S2B-PH-K-S|1
+MicroSD||J3|SD CARD|1
+6 position JST-SH SMD|JST-SH, 6-Position connector, 1mm pitch|J4|SM06B-SRSS-TB|1
+Header 5X2|Header, 5-Pin, Dual row|J5|HDR2X5|1
+1.5µH|Inductor SMD Low DCR 10 µH 900mA 20% 1210|L1|IND_COILCRAFT_LPS3015|1
+100k|Chip Resistor 0805|R1|6-0805_M|1
+1k|Chip Resistor 0805|R2, R3|6-0805_M|2
+1K|Resistor SMD chip 1k Ohm 0.125W 1% 0805|R4|RESC2012X70N|1
+2K|Resistor SMD chip 1k Ohm 0.125W 1% 0805|R5|RESC2012X70N|1
+10K|Resistor SMD chip 1k Ohm 0.125W 1% 0805|R9, R10, R11|RESC2012X70N|3
+DSPIC33EP512GM604-I/PT|16-Bit Digital Signal Controllers with High-Speed PWM, Op Amps and Advanced Analog Features, 70 MIPS, 35 I/O, Industrial Temperature, 44-Pin TQFP (PT44), Tray|U1|TQFP-44|1
+BQ24091||U2|10MSOP-PowerPAD|1
+TPS63001||U3|TDFN-EP 10|1
+CP2102||U4|QFN50P400X400X95-28N|1
+MS5611|Sensor digital de presion barometrica absoluta con interfaz I2C|U5|MS5611|1
+MPU9250|The MPU-9250 is the world’s first integrated 9-axis MotionTracking device that combines a 3-axis   gyroscope, 3-axis accelerometer, and a Digital Motion Processor™ (DMP) all in a small 4x4x0.9mm   package.|U6|QFN50P400X400X95-24N|1
+XTAL|Crystal Oscillator|Y1|CRYSTAL_NX5032GA / NX5032GB|1

@@ -1,0 +1,6 @@
+Change Component Comment : Designator=C16 Old Comment=100n New Comment=10n
+Change Component Comment : Designator=C4 Old Comment=100nF New Comment=10uF
+Change Component Comment : Designator=U3 Old Comment=TPS63031 New Comment=TPS63001
+Change Component Description : Designator=R1 Old Description=Chip Resistor 1206 New Description=Chip Resistor 0805
+Added Pin To Net: NetName=GND Pin=U6-11
+Added Pin To Net: NetName=GND Pin=U6-20
