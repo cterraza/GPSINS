@@ -11,6 +11,7 @@
 // Function prototypes
 
 void SendDoTasks();
+void SendGPS();
 void SendZero();
 void SendReset();
 void SendFirmwareVersion();

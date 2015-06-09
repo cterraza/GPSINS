@@ -12,6 +12,7 @@
 #include "Timer/Timer.h"
 #include "Uart/Uart1.h"
 
+
 //------------------------------------------------------------------------------
 // Functions
 
@@ -23,6 +24,7 @@ void ReceiveDoTasks() {
     while (Uart1IsGetReady() > 0) {
         switch (Uart1GetChar()) {
             case 'f':
+                SendGPS();
             case 'F':
                 SendFirmwareVersion();
                 TimerDelay(2000);

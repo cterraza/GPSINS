@@ -37,6 +37,7 @@ static volatile unsigned int gps_txBufferOut = 0; // only written to by interrup
 //------------------------------------------------------------------------------
 // Functions
 
+
 /**
  * @brief Initialises the UART module.
  *
@@ -72,7 +73,7 @@ void Uart2Initialise(const UartSettings * const uartSettings) {
     U2MODEbits.STSEL = uartSettings->stopBits;
     U2MODEbits.BRGH = 1; // BRG generates 4 clocks per bit period (4x baud clock, High-Speed mode)
     U2STAbits.UTXISEL1 = 1; // Interrupt when a character is transferred to the Transmit Shift Register (TSR), and as a result, the transmit buffer becomes empty
-    U2BRG = CALCULATE_UXBRG(38400);
+    U2BRG = CALCULATE_UXBRG(57600);
     U2MODEbits.UARTEN = 1; // UART1 enabled
     U2STAbits.UTXEN = 1; // UARTx transmitter is enabled. UxTX pin is controlled by UARTx (if ON = 1)
     _U2RXIP = U2_INTERRUPT_PRIORITY; // set RX interrupt priority
@@ -348,10 +349,9 @@ bool Uart2TxIsIdle() {
 /**
  * @brief UART RX interrupt service routine.
  */
-void __attribute__((interrupt, auto_psv))_U2RXInterrupt(void) {
+/*void __attribute__((interrupt, auto_psv))_U2RXInterrupt(void) {
     while (U2STAbits.URXDA) { // repeat while data available
         const char newByte = U2RXREG; // fetch byte from hardware buffer
-        Uart1PutChar(newByte);
         if (gps_rxBufferIn == gps_rxBufferOut - 1) {
             gps_rxBufferOverrun = true; // set flag and discard byte if rxBuffer overrun
         } else {
@@ -360,7 +360,7 @@ void __attribute__((interrupt, auto_psv))_U2RXInterrupt(void) {
         }
     }
     _U2RXIF = 0; // data received immediately before clearing UxRXIF will be unhandled, URXDA therefore must be polled to 'manually' set UxRXIF
-}
+}*/
 
 /**
  * @brief UART TX interrupt service routine.

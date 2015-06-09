@@ -1,40 +1,8 @@
-/*
- * @file Main.h
- * @author xxxxxxxxxxxx
- *
- * Device:
- * dsPIC33EP512GM604
- *
- * Compiler:
- * MPLAB XC16 v1.24
- *
- * Peripherals used:
- * INT1                 Imu.c
- * Timer 1,2            Timer.c
- * I2C1                 I2C1.c
- * UART1                Uart1.c
- * UART1                Uart2.c
- *
- *
- * Interrupt priorities (nesting enabled):
- * 7.
- * 6.
- * 5. TMR1 (Timer.c)
- * 4. I2C1 (I2C1.c)
- * 3. INT1 (Imu.c)
- * 2. UART1 (Uart1.c)
- * 1.
- */
-
 //------------------------------------------------------------------------------
 // Includes
 
-#include "Imu/Imu.h"
-#include "Receive/Receive.h"
-#include "Send/Send.h"
 #include <stdbool.h>
 #include "SystemDefinitions.h"
-#include "Timer/Timer.h"
 #include "Uart/Uart1.h"
 #include "Uart/Uart2.h"
 #include <libpic30.h>        // __delayXXX() functions macros defined here
@@ -49,12 +17,27 @@ _FWDT(FWDTEN_OFF); // Watchdog timer enabled/disabled by user software
 _FOSC(FCKSM_CSECME & POSCMD_HS); // Clock switching is enabled,Fail-safe Clock Monitor is disabled; HS Crystal Oscillator Mode
 _FOSCSEL(FNOSC_PRIPLL & IESO_ON)
 
-
+//------------------------------------------------------------------------------
+// Global variables
+char inicio=0;
+char CaracteresRecibidos=0;
 //------------------------------------------------------------------------------
 // Function prototypes
 
 static void Initialise(void);
 
+//------------------------------------------------------------------------------
+// Interrupt vector
+
+void __attribute__((interrupt, auto_psv))_U2RXInterrupt(void) {
+    char c;
+    while (U2STAbits.URXDA) { // repeat while data available
+        c = U2RXREG;
+        U1TXREG = c;
+        if(c=0xB5){inicio=1;CaracteresRecibidos=0;LED2_LAT = ~LED2_LAT;}
+    }
+    _U2RXIF = 0;
+}
 //------------------------------------------------------------------------------
 // Functions
 
@@ -67,15 +50,15 @@ int main(void) {
     Initialise();
 
     // Initialise drivers and middleware modules
-    TimerInitialise();
-    ImuInitialise();
+    // TimerInitialise();
+    // ImuInitialise();
     const UartSettings uartSettings = DEFAULT_UART_SETTINGS;
     Uart1Initialise(&uartSettings);
     Uart2Initialise(&uartSettings);
 
     // Start up application tasks
-    SendReset();
-    SendFirmwareVersion();
+    // SendReset();
+    // SendFirmwareVersion();
 
     // Main loop
     while (true) {
@@ -83,8 +66,8 @@ int main(void) {
         // Application tasks
         //SendDoTasks();
         //ReceiveDoTasks();
-        __delay_ms(500);
-        LED2_LAT = ~LED2_LAT;
+        //__delay_ms(500);
+        //LED2_LAT = ~LED2_LAT;
         
     }
 }

@@ -1,0 +1,15 @@
+UBLOX M8N DATA FRAME
+
+POSLLH (Geodetic Position)
+
+0000  B5 62 01 02 1C 00 A8 B7 96 18 2B 86  µb¨·+
+000C  D9 D3 C1 F8 C2 02 F0 5F 2F 00 A7 4D  ÙÓÁøÂð_/§M
+0018  2F 00 22 65 10 00 AF 4E 01 00 3C 27  /"e¯N<'
+
+Time of week 	412530.600
+Longitude 	-74.0719061
+Latitude	4.6332097
+
+Ellipsoid	3104.752
+Mean Sealevel	3100.071
+Geoid Sep.	4.681

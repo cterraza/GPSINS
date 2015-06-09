@@ -30,6 +30,7 @@ bool Uart2GetRxBufferOverrunFlag();
 void Uart1ClearRxBufferOverrunFlag();
 bool Uart1TxIsIdle();
 
+
 #endif
 
 //------------------------------------------------------------------------------

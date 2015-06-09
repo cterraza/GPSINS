@@ -6,8 +6,6 @@
 //------------------------------------------------------------------------------
 // Includes
 
-#include "Imu/Imu.h"
-#include "Send.h"
 #include <stdint.h> // int32_t
 #include <stdio.h> // sprintf
 #include <string.h> // strcpy, strcat
@@ -39,21 +37,13 @@ void SendDoTasks() {
     static Ticks32 previousTicks;
     if ((currentTicks.value - previousTicks.value) >= (TIMER_TICKS_PER_SECOND / SEND_FREQUENCY)) {
         previousTicks = currentTicks;
-        SendMeasurements();
     }
 }
 
-/**
- * @brief Sends current encoder and IMU measurements.
- */
-static void SendMeasurements() {
-    char string[1024];
-    ImuMeasurement imuMeasurement;
-    ImuGetMeasurement(&imuMeasurement);
-    sprintf(string, "%ld,%ld,%ld\r\n",
-            (int32_t) (100.0f * imuMeasurement.azimuth),
-            (int32_t) (100.0f * imuMeasurement.elevation),
-            (int32_t) (100.0f * imuMeasurement.angularVelocityNorm));
+
+void SendGPS() {
+    char string[80];
+    //sprintf(string, "Altura: %4.1f\r\n",GPS_altitude/100.0f);
     Uart1PutString(string);
 }
 

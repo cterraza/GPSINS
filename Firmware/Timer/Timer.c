@@ -1,6 +1,6 @@
 /**
  * @file Timer.c
- * @author Seb Madgwick
+ * @author xxxxxxxxxxxxxxxx
  * @brief Timer library for dsPIC33EP.
  *
  * Provides measurements of time in processor ticks where one tick = 14.286 ns

@@ -352,7 +352,6 @@ bool Uart1TxIsIdle() {
 void __attribute__((interrupt, auto_psv))_U1RXInterrupt(void) {
     while (U1STAbits.URXDA) { // repeat while data available
         const char newByte = U1RXREG; // fetch byte from hardware buffer
-        Uart2PutChar(newByte);
         if (rxBufferIn == rxBufferOut - 1) {
             rxBufferOverrun = true; // set flag and discard byte if rxBuffer overrun
         } else {

@@ -4,6 +4,8 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <logicalFolder name="GPS" displayName="GPS" projectFiles="true">
+      </logicalFolder>
       <logicalFolder name="f3" displayName="I2C" projectFiles="true">
         <itemPath>../I2C/I2CCommon.h</itemPath>
         <itemPath>../I2C/I2CScript.h</itemPath>

@@ -1,6 +1,6 @@
 /**
  * @file Timer.h
- * @author Seb Madgwick
+ * @author xxxxxxxxxxxxxxxx
  * @brief Timer library for dsPIC33EP.
  */
 
