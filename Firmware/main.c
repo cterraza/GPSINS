@@ -21,6 +21,8 @@ _FOSCSEL(FNOSC_PRIPLL & IESO_ON)
 // Global variables
 char inicio=0;
 char CaracteresRecibidos=0;
+
+unsigned volatile char POSLLH[40] = ",170000,0,N,0,W,0,0,0,M,0,M,,*47";
 //------------------------------------------------------------------------------
 // Function prototypes
 
@@ -34,7 +36,15 @@ void __attribute__((interrupt, auto_psv))_U2RXInterrupt(void) {
     while (U2STAbits.URXDA) { // repeat while data available
         c = U2RXREG;
         U1TXREG = c;
-        if(c=0xB5){inicio=1;CaracteresRecibidos=0;LED2_LAT = ~LED2_LAT;}
+        if(c=0xB5){
+            inicio=1;
+            CaracteresRecibidos=0;
+            LED2_LAT = ~LED2_LAT;
+        }
+        if(inicio){
+            POSLLH[CaracteresRecibidos]=c;
+            CaracteresRecibidos++;
+        }
     }
     _U2RXIF = 0;
 }
